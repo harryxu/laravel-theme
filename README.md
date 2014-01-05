@@ -26,7 +26,7 @@ If you do not want do any thing about config, the default theme is called "`defa
 
 Create a new folder `public/themes`.
 
-Create a folder in `themes` any named your theme name, like `mytheme`.
+Create a folder in `themes` use your theme name, like `mytheme`.
 
 Put your theme templates file to `mytheme/views`.
 
