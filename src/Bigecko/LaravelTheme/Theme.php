@@ -3,11 +3,9 @@
 class Theme
 {
     /**
-     * Base path for contain themes.
+     * Base path to contain themes.
      */
     public $basePath;
-
-    private $initialized = false;
 
     private $theme;
 
@@ -20,6 +18,8 @@ class Theme
         $this->finder = $finder;
 
         $this->UrlGenerator = $urlGenerator;
+
+        $this->init();
     }
 
     public function setTheme($value)
@@ -35,12 +35,8 @@ class Theme
         return $this->theme;
     }
 
-    public function init()
+    protected function init()
     {
-        if ($this->initialized) {
-            return;
-        }
-
         // add theme hints to existing namespaces
         foreach ($this->finder->getHints() as $namespace => $hints) {
             $this->finder->prependNamespace($namespace, $this->viewPath() . '/' . $namespace);
@@ -49,7 +45,7 @@ class Theme
         // add theme views path
         $this->finder->prependLocation($this->viewPath());
 
-        // Default path for put themes is 'public/themes'.
+        // Default basePath is 'public/themes'.
         if (!isset($this->basePath)) {
             $this->basePath = $this->urlGenerator->asset('/') . '/themes';
         }
@@ -58,7 +54,7 @@ class Theme
     }
 
     /**
-     * Helper method for generate asset url based on current theme path.
+     * Helper method to generate asset url based on current theme path.
      *
      * @param  string  $path  The asset path relative to theme path.
      * @return string  The full url for the asset.

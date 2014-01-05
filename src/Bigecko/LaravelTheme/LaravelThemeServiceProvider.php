@@ -18,7 +18,24 @@ class LaravelThemeServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
+        $this->package('bigecko/laravel-theme');
+
+        // override core view finder
+        $this->app['view.finder'] = $this->app->share(function($app) {
+            $paths = $app['config']['view.paths'];
+
+            return new FileViewFinder($app['files'], $paths);
+        });
+
+        $this->app['theme'] = $this->app->share(function($app) {
+            $theme = new Theme($app['view.finder'], $app['url']);
+            return $theme;
+        });
+    }
+
+    public function boot()
+    {
+        $this->app->make('theme')->setTheme(Config::get('app.theme', 'default'));
     }
 
     /**
