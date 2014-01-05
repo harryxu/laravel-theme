@@ -5,7 +5,7 @@ Inspired by lightgear/theme but not depend on specific asset manager.
 
 ## TODO
   * Configurable themes base path.
-  * Configurable theme view path?
+  * Template files in public path may not a good idea, configurable theme view path?
 
 
 ## Install
@@ -45,12 +45,12 @@ Put your theme templates file to `mytheme/views`.
 That's it.
 
 
-## Code example:
+## Code example
 
 ```php
 
-View::make('home');  // First find 'public/themes/mytheme/views/home.blade.php'
-                     // If not exist, will use 'app/views/home.blade.php'
+View::make('home');  // First find in 'public/themes/mytheme/views/'.
+                     // If file not exist, will use default location 'app/views/'.
 
 
 Theme::asset('js/a.js');  // 'public/themes/mytheme/js/a.js'
