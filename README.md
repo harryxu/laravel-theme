@@ -10,6 +10,18 @@ Inspired by lightgear/theme but not depend on specific asset manager.
 
 ## Install
 
+Composer require:
+
+    "bigecko/laravel-theme": "dev-master"
+
+Service provider:
+
+    'Bigecko\LaravelTheme\LaravelThemeServiceProvider',
+
+Alias:
+
+    'Theme' => 'Bigecko\LaravelTheme\Facade',
+
 ## Config?
 
 We do not have any new config file.
@@ -18,7 +30,7 @@ You can put a one line config to `config/app.php`:
 
     'theme' => 'mytheme',
 
-Or just call `Config::set('app.theme', 'mytheme')` to set theme dynamically.
+Or just call `Theme::setTheme('mytheme')` to change theme dynamically.
 
 If you do not want do any thing about config, the default theme is called "`default`".
 
@@ -45,6 +57,10 @@ Theme::asset('js/a.js');  // 'public/themes/mytheme/js/a.js'
 
 // Still want use asset helper function?
 asset(Theme::themePath() . '/js/a.js');
+
+
+Theme::getTheme(); // Get current theme name.
+Theme::setTheme('mytheme'); // Change theme.
 
 ```
 
