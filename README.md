@@ -4,7 +4,6 @@
 Inspired by lightgear/theme but not depend on specific asset manager.
 
 ## TODO
-  * Configurable themes base path.
   * Template files in public path may not a good idea, configurable theme view path?
 
 
@@ -30,8 +29,6 @@ You can put a one line config to `config/app.php`:
 
     'theme' => 'mytheme',
 
-Or just call `Theme::setTheme('mytheme')` to change theme dynamically.
-
 If you do not want do any thing about config, the default theme is called "`default`".
 
 ## Usage
@@ -56,11 +53,10 @@ View::make('home');  // First find in 'public/themes/mytheme/views/'.
 Theme::asset('js/a.js');  // 'public/themes/mytheme/js/a.js'
 
 // Still want use asset helper function?
-asset(Theme::themePath() . '/js/a.js');
+asset(Theme::name() . '/js/a.js');
 
 
-Theme::getTheme(); // Get current theme name.
-Theme::setTheme('mytheme'); // Change theme.
+Theme::name(); // Get current theme name.
 
 ```
 
