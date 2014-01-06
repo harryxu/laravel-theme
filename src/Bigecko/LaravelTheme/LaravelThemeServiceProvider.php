@@ -35,7 +35,7 @@ class LaravelThemeServiceProvider extends ServiceProvider {
 
     public function boot()
     {
-        $this->app->make('theme')->setTheme(Config::get('app.theme', 'default'));
+        $this->app->make('theme')->setTheme($this->app['config']->get('app.theme', 'default'));
     }
 
     /**

@@ -2,11 +2,6 @@
 
 class Theme
 {
-    /**
-     * Base path to contain themes.
-     */
-    public $basePath;
-
     private $theme;
 
     protected $finder;
@@ -18,24 +13,17 @@ class Theme
         $this->finder = $finder;
 
         $this->UrlGenerator = $urlGenerator;
-
-        $this->init();
-    }
-
-    public function setTheme($value)
-    {
-        $this->theme = $value;
     }
 
     /**
-     * Get current theme.
+     * Get current theme name.
      */
-    public function getTheme()
+    public function name()
     {
         return $this->theme;
     }
 
-    protected function init()
+    protected function updateFinder()
     {
         // add theme hints to existing namespaces
         foreach ($this->finder->getHints() as $namespace => $hints) {
@@ -44,13 +32,6 @@ class Theme
 
         // add theme views path
         $this->finder->prependLocation($this->viewPath());
-
-        // Default basePath is 'public/themes'.
-        if (!isset($this->basePath)) {
-            $this->basePath = $this->urlGenerator->asset('/') . '/themes';
-        }
-
-        $this->initialized = true;
     }
 
     /**
@@ -61,7 +42,7 @@ class Theme
      */
     public function asset($path)
     {
-        $this->urlGenerator->asset($this->viewPath() . '/' . trim($path, '/'));
+        $this->urlGenerator->asset($this->theme . '/' . trim($path, '/'));
     }
 
     /**
@@ -69,15 +50,6 @@ class Theme
      */
     public function viewPath()
     {
-        return $this->themePath() . '/views';
+        return public_path($this->theme . '/views');
     }
-
-    /**
-     * Get current theme path.
-     */
-    public function themePath()
-    {
-        return $this->basePath . '/' . $this->theme;
-    }
-
 }
