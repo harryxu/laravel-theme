@@ -33,10 +33,6 @@ class LaravelThemeServiceProvider extends ServiceProvider {
         });
     }
 
-    public function boot()
-    {
-    }
-
     /**
      * Get the services provided by the provider.
      *

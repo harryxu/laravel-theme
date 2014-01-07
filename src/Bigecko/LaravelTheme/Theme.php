@@ -16,6 +16,15 @@ class Theme
     }
 
     /**
+     * init theme
+     */
+    public function init($name)
+    {
+        $this->theme = $name;
+        $this->updateFinder();
+    }
+
+    /**
      * Get current theme name.
      */
     public function name()
