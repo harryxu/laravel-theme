@@ -8,11 +8,9 @@ class Theme
 
     protected $urlGenerator;
 
-    public function __construct($finder, $urlGenerator)
+    public function __construct($finder)
     {
         $this->finder = $finder;
-
-        $this->UrlGenerator = $urlGenerator;
     }
 
     /**
@@ -51,7 +49,7 @@ class Theme
      */
     public function asset($path)
     {
-        $this->urlGenerator->asset($this->theme . '/' . trim($path, '/'));
+        return asset($this->theme . '/' . trim($path, '/'));
     }
 
     /**
