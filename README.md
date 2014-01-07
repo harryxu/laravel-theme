@@ -21,16 +21,6 @@ Alias:
 
     'Theme' => 'Bigecko\LaravelTheme\Facade',
 
-## Config?
-
-We do not have any new config file.
-
-You can put a one line config to `config/app.php`:
-
-    'theme' => 'mytheme',
-
-If you do not want do any thing about config, the default theme is called "`default`".
-
 ## Usage
 
 Create a new folder `public/themes`.
@@ -40,6 +30,12 @@ Create a folder in `themes` use your theme name, like `mytheme`.
 Put your theme templates file to `mytheme/views`.
 
 That's it.
+
+### init theme
+
+```php
+Theme::init('mytheme');
+```
 
 
 ## Code example
