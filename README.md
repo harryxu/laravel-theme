@@ -23,13 +23,13 @@ Alias:
 
 ## Usage
 
+### Structure
+
 Create a new folder `public/themes`.
 
 Create a folder in `themes` use your theme name, like `mytheme`.
 
 Put your theme templates file to `mytheme/views`.
-
-That's it.
 
 ### init theme
 
@@ -38,7 +38,7 @@ Theme::init('mytheme');
 ```
 
 
-## Code example
+### Code example
 
 ```php
 
