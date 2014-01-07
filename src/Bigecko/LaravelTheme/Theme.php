@@ -47,9 +47,9 @@ class Theme
      * @param  string  $path  The asset path relative to theme path.
      * @return string  The full url for the asset.
      */
-    public function asset($path)
+    public function asset($path = '')
     {
-        return asset($this->theme . '/' . trim($path, '/'));
+        return asset('themes/' . $this->theme . '/' . trim($path, '/'));
     }
 
     /**
