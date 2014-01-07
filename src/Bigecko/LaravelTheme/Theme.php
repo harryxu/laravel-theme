@@ -59,6 +59,6 @@ class Theme
      */
     public function viewPath()
     {
-        return public_path($this->theme . '/views');
+        return public_path('themes/' . $this->theme . '/views');
     }
 }
