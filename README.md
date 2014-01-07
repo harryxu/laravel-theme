@@ -3,10 +3,6 @@
 
 Inspired by lightgear/theme but not depend on specific asset manager.
 
-## TODO
-  * Template files in public path may not a good idea, configurable theme view path?
-
-
 ## Install
 
 Composer require:

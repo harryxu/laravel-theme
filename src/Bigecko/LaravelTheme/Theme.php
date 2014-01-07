@@ -6,7 +6,10 @@ class Theme
 
     protected $finder;
 
-    protected $urlGenerator;
+    protected $options = array(
+        'public_dirname' => 'themes',
+        'views_path' => null,
+    );
 
     public function __construct($finder)
     {
@@ -16,9 +19,11 @@ class Theme
     /**
      * init theme
      */
-    public function init($name)
+    public function init($name, array $options = array())
     {
         $this->theme = $name;
+        $this->options = array_merge($this->options, $options);
+
         $this->updateFinder();
     }
 
@@ -49,7 +54,7 @@ class Theme
      */
     public function asset($path = '')
     {
-        return asset('themes/' . $this->theme . '/' . trim($path, '/'));
+        return asset($this->options['public_dirname'] . '/' . $this->name() . '/' . trim($path, '/'));
     }
 
     /**
@@ -57,6 +62,8 @@ class Theme
      */
     public function viewPath()
     {
-        return public_path('themes/' . $this->theme . '/views');
+        return is_null($this->options['views_path'])
+            ? public_path($this->options['public_dirname'] . '/' . $this->name() . '/views')
+            : rtrim($this->options['views_path'], '/') . '/' . $this->name();
     }
 }

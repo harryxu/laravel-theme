@@ -18,8 +18,6 @@ class LaravelThemeServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->package('bigecko/laravel-theme');
-
         // override core view finder
         $this->app['view.finder'] = $this->app->share(function($app) {
             $paths = $app['config']['view.paths'];
@@ -28,7 +26,7 @@ class LaravelThemeServiceProvider extends ServiceProvider {
         });
 
         $this->app['theme'] = $this->app->share(function($app) {
-            $theme = new Theme($app['view.finder'], $app['url']);
+            $theme = new Theme($app['view.finder']);
             return $theme;
         });
     }
