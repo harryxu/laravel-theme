@@ -41,7 +41,7 @@ View::make('home');  // First find in 'public/themes/mytheme/views/'.
                      // If file not exist, will use default location 'app/views/'.
 
 
-Theme::asset('js/a.js');  // 'public/themes/mytheme/js/a.js'
+Theme::asset('js/a.js');  // 'http://domain/themes/mytheme/js/a.js'
 
 // Still want use laravel's asset helper function?
 asset(Theme::asset() . '/js/a.js');

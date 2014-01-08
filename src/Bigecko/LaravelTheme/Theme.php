@@ -66,4 +66,13 @@ class Theme
             ? public_path($this->options['public_dirname'] . '/' . $this->name() . '/views')
             : rtrim($this->options['views_path'], '/') . '/' . $this->name();
     }
+
+    /**
+     * Get the fully qualified path to the theme public directory.
+     */
+    public function publicPath($path = '')
+    {
+        return public_path($this->options['public_dirname'] . '/' . $this->name()
+                    . (empty($path) ? '' : '/' . rtrim($path)));
+    }
 }
