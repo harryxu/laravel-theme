@@ -1,7 +1,6 @@
 # Simple theme manager for Laravel 4
-# Not done yet...
 
-Inspired by lightgear/theme but not depend on specific asset manager.
+Inspired by [lightgear/theme](https://github.com/lightgear/theme), but not depend on specific asset manager.
 
 ## Install
 
@@ -53,3 +52,14 @@ Theme::name(); // Get current theme name.
 ```
 
 Also support package templates overriding, just put package templates to your theme folder.
+
+
+## Why use this?
+
+Simple:
+
+  * Dot not need change code to render template, still `View::make`.
+  * No asset management or other dependencies.
+  * No new config file.
+  * Few lines of code, easy to read.
+  * Just for theme, no more other responsibilities.
