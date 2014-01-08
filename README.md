@@ -61,5 +61,5 @@ Simple:
   * Dot not need change code to render template, still `View::make`.
   * No asset management or other dependencies.
   * No new config file.
-  * Few lines of code, easy to read.
-  * Just for theme, no more other responsibilities.
+  * Just few lines of code, easy to read.
+  * Only for theme, no more other responsibilities.
