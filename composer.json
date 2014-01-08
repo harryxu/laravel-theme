@@ -1,12 +1,17 @@
 {
     "name": "bigecko/laravel-theme",
-    "description": "",
+    "description": "Simple theme manager for Laravel 4.",
     "authors": [
         {
             "name": "harryxu",
             "email": "harryzhxu@gmail.com"
+        },
+        {
+            "name": "GaiRui Inc.",
+            "homepage": "http://bigecko.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.*"
