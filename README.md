@@ -52,8 +52,9 @@ Theme::init('mytheme', array(
     'views_path' => app_path('views'),  // Change the path to contain theme templates.
 ));
 ```
-Once you change the views_path, the sub dir `views` for theme is not needed,
-just create your theme folder in views_path, and put templates in it.
+
+Once you change the views_path, the sub dir `views` for theme is not needed,  
+just create your theme folder in views_path, and put templates in it.  
 like: `app/views/mytheme/hello.blade.php`.
 
 
