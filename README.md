@@ -20,6 +20,18 @@ Alias:
 
 ### Structure
 
+```
+├── public/
+    └── themes/
+        ├── mytheme/
+        |   ├── js/
+        |   ├── css/
+        |   └── views/
+        |
+        └── anothertheme/
+
+```
+
 Create a new folder `public/themes`.
 
 Create a folder in `themes` use your theme name, like `mytheme`.
