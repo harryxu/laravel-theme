@@ -1,4 +1,4 @@
-# Simple theme manager for Laravel 4
+# Simple theme support for Laravel 4
 
 Inspired by [lightgear/theme](https://github.com/lightgear/theme), but not depend on specific asset manager.
 
