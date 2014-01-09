@@ -43,9 +43,7 @@ View::make('home');  // First find in 'public/themes/mytheme/views/'.
 
 Theme::asset('js/a.js');  // 'http://domain/themes/mytheme/js/a.js'
 
-// Still want use laravel's asset helper function?
-asset(Theme::asset() . '/js/a.js');
-
+Theme::publicPath('js/jquery.js')  // /path/to/project/public/themes/mytheme/js/jquery.js
 
 Theme::name(); // Get current theme name.
 
