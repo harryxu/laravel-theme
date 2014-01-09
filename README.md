@@ -49,7 +49,7 @@ Theme::name(); // Get current theme name.
 
 ```
 
-Also support package templates overriding, just put package templates to your theme folder.
+Also support package templates overriding, just put package templates to your theme views folder.
 
 
 ## Why use this?
