@@ -61,3 +61,7 @@ Simple:
   * No new config file.
   * Just few lines of code, easy to read.
   * Only for theme, no more other responsibilities.
+
+## TODO
+
+  * Add unit testing.
